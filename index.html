@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shopia_test</title>
+  <title>shopia_test</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
+
 	<div class="wrapper">
 
 		<div class="account-block">
@@ -18,7 +20,7 @@
 				<li><a href="#">WELCOME MSG!</a></li>
 				<li><a href="#">MY ACCOUNT</a></li>
 				<li><a href="#">MY WISHLIST</a></li>
-				<li><a href="#">LOGIN</a></li>
+				<li><a href="#" id="loginBtn">LOGIN</a></li>
 			</ul>
 		</div>
 
@@ -49,6 +51,16 @@
 		</header>
 
 		<div class="slider-block">
+			<div id="triangle_down"></div>
+			<div class="slides">
+				<img class="slide" src="img/slider_banner_1.png" alt="1">
+				<img class="slide" src="img/slider_banner_2.jpg" alt="2">
+				<img class="slide" src="img/slider_banner_3.jpg" alt="3">		
+			</div>
+			<div class="slider_navigation">
+				<button class="slider_nav_btn" onclick="navigateSlides(-1)"></button>
+				<button class="slider_nav_btn" onclick="navigateSlides(1)"></button>
+			</div>
 			<div class="ad">
 				<p>MID-SEASON</p>
 				<p>SALE</p>
@@ -56,10 +68,11 @@
 				<p>50% OFF</p>
 			</div>
 			<a href="#" class="button">SHOP NOW</a>
+
 			<div class="slider_rectangles">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span onclick="showCurrentSlide(1)"></span>
+				<span onclick="showCurrentSlide(2)"></span>
+				<span onclick="showCurrentSlide(3)"></span>
 			</div>
 		</div>
 
@@ -172,7 +185,7 @@
 					<li><a href="#"><i class="fas fa-rss"></i></a></li>
 				</ul>
 				<h3>SUBSCRIBE <span>in</span> OUR NEWS LETTER</h3>
-				<form>
+				<form class="footer_form">
 					<input type="text" placeholder="Enter Your Email Address" maxlength="32">
 					<input type="submit" value="SUBSCRIBE">
 				</form>
@@ -180,16 +193,37 @@
 		</footer>
 		
 		<address>
-				<p>@ 2015 Shopia Fashion Store Shopify.</p>
-				<p>All Rights Reserved. Ecommerce Software by Shopify.</p>
-				<p>Designed by MoccaLabs.com</p>
-				<ul class="banks_links">
-					<li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
-					<li><a href="#"><i class="fab fa-cc-mastercard"></i></a></li>
-					<li><a href="#"><i class="fab fa-cc-amex"></i></a></li>
-					<li><a href="#"><i class="fab fa-cc-discover"></i></a></li>
-				</ul>
-			</address>
+			<p>@ 2015 Shopia Fashion Store Shopify.</p>
+			<p>All Rights Reserved. Ecommerce Software by Shopify.</p>
+			<p>Designed by MoccaLabs.com</p>
+			<ul class="banks_links">
+				<li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
+				<li><a href="#"><i class="fab fa-cc-mastercard"></i></a></li>
+				<li><a href="#"><i class="fab fa-cc-amex"></i></a></li>
+				<li><a href="#"><i class="fab fa-cc-discover"></i></a></li>
+			</ul>
+		</address>
+
+		<a id="backToTop"><i class="fas fa-angle-up"></i></a>
+
+		<div id="popup">
+			<form class="popup_form">
+				<p>sign in</p>
+				<input type="text" placeholder="username">
+				<input type="password" placeholder="password">
+				<div class="wrapper_for_checkbox_and_sumbit">
+					<div class="wrapper_for_checkbox">
+						<input type="checkbox" id="popup_checkbox">
+						<label for="popup_checkbox">Keep me signed in.</label>
+					</div>
+					<input type="submit" value="SIGN IN">
+				</div>
+			</form>
+			<span id="closeBtn"><i class="fas fa-times"></i></span>
+		</div>
+
 	</div>
+
+	<script src="js/main.js"></script>
 </body>
 </html>
